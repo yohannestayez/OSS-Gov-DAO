@@ -31,7 +31,7 @@ class DAO:
             proposal = Proposal(proposal_id, description, proposer_id, is_funding_proposal, requested_amount)
             self.proposals[proposal_id] = proposal
             self.next_proposal_id += 1
-            funding_status = " (Funding Request: {requested_amount} units)" if is_funding_proposal else ""
+            funding_status = f" (Funding Request: {requested_amount} units)" if is_funding_proposal else ""
             print(f"Proposal {proposal_id}: '{description}' by {proposer_id}{funding_status}. Status: {proposal.status}")
             return proposal
         except ValueError as e:
