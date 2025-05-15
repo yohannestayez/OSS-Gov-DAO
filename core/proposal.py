@@ -41,7 +41,7 @@ class Proposal:
 
         user.voice_credits -= num_credits_committed**2  # Cost is credits squared
         self.votes[user.user_id] = num_credits_committed
-        self.quadratic_votes[user.user_id] = math.sqrt(num_credits_committed)
+        self.quadratic_votes[user.user_id] = num_credits_committed
         print(f"User {user.user_id} voted with {num_credits_committed} credits (cost: {num_credits_committed**2}) on proposal {self.proposal_id}. Remaining credits: {user.voice_credits}")
         return True
 
